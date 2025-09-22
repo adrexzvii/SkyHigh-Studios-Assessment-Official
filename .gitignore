@@ -1,0 +1,11 @@
+_PackageInt/
+Packages/
+*.exe
+.cache
+*.akd
+*.prof
+*.validationcache
+*.woff
+*.woff2
+.LICENSE.txt
+.map
