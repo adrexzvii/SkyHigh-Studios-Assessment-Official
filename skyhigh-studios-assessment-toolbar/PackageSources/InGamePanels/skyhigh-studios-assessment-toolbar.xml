@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SimBase.Document Type="InGamePanels" version="1.0">
+    <Filename>skyhigh-studios-assessment-toolbar.spb</Filename>
+    <InGamePanels.InGamePanelDefinition
+        id="PANEL_skyhigh-studios"
+        Name="SkyHigh Studios"
+        url="html_ui/InGamePanels/skyhigh-studios-assessment-toolbar/index.html"
+        resizeDirections="none"
+        minWidth="25px"
+        minHeight="65px"
+        defaultWidth="36px"
+        defaultHeight="65px"
+        defaultTop="10px"
+        defaultRight="50px"
+        icon="ICON_TOOLBAR_SOFLY_SIMRATE"
+        buttonVisible="true"
+    >
+    </InGamePanels.InGamePanelDefinition>
+</SimBase.Document>
