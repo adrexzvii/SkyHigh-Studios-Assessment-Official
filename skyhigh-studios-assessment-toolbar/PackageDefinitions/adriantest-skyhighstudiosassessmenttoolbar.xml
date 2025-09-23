@@ -16,8 +16,8 @@
 			<Flags>
 				<FSXCompatibility>false</FSXCompatibility>
 			</Flags>
-			<AssetDir>PackageDefinitions\adriantest-skyhighstudiosassessmenttoolbar\ContentInfo</AssetDir>
-			<OutputDir>ContentInfo\adriantest-skyhighstudiosassessmenttoolbar</OutputDir>
+			<AssetDir>PackageDefinitions\adriantest-skyhighstudiosassessmenttoolbar\ContentInfo\</AssetDir>
+			<OutputDir>ContentInfo\adriantest-skyhighstudiosassessmenttoolbar\</OutputDir>
 		</AssetGroup>
 		<AssetGroup Name="skyhigh-studios-assessment-toolbar-ui">
 			<Type>Copy</Type>
