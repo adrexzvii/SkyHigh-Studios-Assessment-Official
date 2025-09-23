@@ -1,15 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.e6c13ad2.css",
+    "main.css": "/static/css/skyhigh_studios_assessment.css",
     "main.js": "/static/js/skyhigh_studios_assessment.js",
     "skyhigh_studios_assessment.html": "/skyhigh_studios_assessment.html",
+    "static/media/config.json": "/static/media/config.json",
     "skyhigh_studios_assessment.css.map": "/static/css/skyhigh_studios_assessment.css.map",
-    "skyhigh_studios_assessment.js.map": "/static/js/skyhigh_studios_assessment.js.map",
-    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map"
+    "skyhigh_studios_assessment.js.map": "/static/js/skyhigh_studios_assessment.js.map"
   },
   "entrypoints": [
     "static/css/skyhigh_studios_assessment.css",
-    "static/js/skyhigh_studios_assessment.js",
-    "static/css/main.e6c13ad2.css"
+    "static/js/skyhigh_studios_assessment.js"
   ]
 }

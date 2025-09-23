@@ -53,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^13.0.1",
     "customize-cra": "^1.0.0",
     "react-app-rewired": "^2.2.1"
   }
