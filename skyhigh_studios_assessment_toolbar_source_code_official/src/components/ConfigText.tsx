@@ -44,7 +44,7 @@ const ConfigText: React.FC = () => {
       try {
         // Fetch config.json from MSFS coherent GT path
         const response = await fetch(
-          "coui://html_ui/InGamePanels/skyhigh-studios-assessment-toolbar/media/config.json"
+          "coui://html_ui/InGamePanels/lower-loon-toolbar/media/config.json"
         );
         const json = await response.json();
         setConfig(json); // Update state with the configuration data
