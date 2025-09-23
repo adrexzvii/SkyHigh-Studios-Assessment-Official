@@ -1,44 +1,37 @@
+
 const path = require("path");
 const { override } = require("customize-cra");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = override(
-  // Configuration of output and disabling code splitting
+  // Override output config
   (config) => {
-    config.output.path = path.resolve(__dirname, "dist");
-    config.output.filename = "static/js/skyhigh_studios_assessment.js";
-    config.output.publicPath = "./"; // relative paths
+    config.output = {
+      ...config.output,
+      path: path.resolve(__dirname, "dist"),
+      filename: "static/js/skyhigh_studios_assessment.js", // js name
+      publicPath: "./", // relative paths
+    };
 
-    // To disable code splitting
-    config.optimization.splitChunks = {
-      cacheGroups: {
-        default: false,
-      },
-    };
+    // Disable code splitting
+    config.optimization.splitChunks = false;
     config.optimization.runtimeChunk = false;
-    config.resolve.fallback = {
-      fs: false,
-    };
+
     return config;
   },
 
-  // change html file name
+  // Override HTML output filename
   (config) => {
     config.plugins = config.plugins.map((plugin) => {
       if (plugin instanceof HtmlWebpackPlugin) {
         plugin.options.filename = "skyhigh_studios_assessment.html";
         plugin.options.minify = {
-          removeComments: true,
           collapseWhitespace: true,
-          removeRedundantAttributes: true,
-          useShortDoctype: true,
-          removeEmptyAttributes: true,
-          removeStyleLinkTypeAttributes: true,
-          keepClosingSlash: true,
-          minifyJS: true,
+          removeComments: true,
           minifyCSS: true,
-          minifyURLs: true,
+          minifyJS: true,
         };
       }
       return plugin;
@@ -46,57 +39,34 @@ module.exports = override(
     return config;
   },
 
-  // settings to handle css and scss files
+  // Override CSS extraction (no hashes)
   (config) => {
-    const cssRule = config.module.rules.find(
-      (rule) => rule.oneOf && rule.oneOf.length
-    );
-
-    if (cssRule) {
-      cssRule.oneOf.forEach((oneOfRule) => {
-        if (oneOfRule.test && oneOfRule.test.toString().includes("css")) {
-          oneOfRule.use = [
-            MiniCssExtractPlugin.loader,
-            {
-              loader: "css-loader",
-              options: {
-                sourceMap: true,
-              },
-            },
-            {
-              loader: "postcss-loader",
-              options: {
-                sourceMap: true,
-              },
-            },
-          ];
-        }
-      });
-    }
-
-    config.plugins.push(
-      new MiniCssExtractPlugin({
-        filename: "static/css/skyhigh_studios_assessment.css",
-      })
-    );
-
+    config.plugins = config.plugins.map((plugin) => {
+      if (plugin instanceof MiniCssExtractPlugin) {
+        return new MiniCssExtractPlugin({
+          filename: "static/css/skyhigh_studios_assessment.css", // fixed name
+        });
+      }
+      return plugin;
+    });
     return config;
   },
 
-  // config to handle images,etc
+  // copy json and media files to dist
   (config) => {
-    const fileLoaderRule = {
-      test: /\.(png|jpe?g|gif|svg)$/i,
-      loader: "file-loader",
-      options: {
-        name: "static/media/[name].[hash:8].[ext]",
-        publicPath: "./", // images relative path
-        outputPath: "static/media/",
-      },
-    };
-
-    // file loader path
-    config.module.rules.push(fileLoaderRule);
+    config.plugins.push(
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, "src/media"), // source folder
+            to: "static/media/[name][ext]",             // keeps original name
+            globOptions: {
+              ignore: ["**/*.{png,jpg,jpeg,gif,svg}"], // optional: ignore images
+            },
+          },
+        ],
+      })
+    );
 
     return config;
   }
