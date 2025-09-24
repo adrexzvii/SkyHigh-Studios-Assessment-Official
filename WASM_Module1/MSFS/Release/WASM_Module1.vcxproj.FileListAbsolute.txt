@@ -1,0 +1,1 @@
+D:\prueba wasm\WASM_Module1\MSFS\Release\WASM_Module1.wasm
