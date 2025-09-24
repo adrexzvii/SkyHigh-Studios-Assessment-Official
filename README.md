@@ -214,7 +214,7 @@ The panel opens from the **toolbar** of the simulator. It is composed of **three
 
 ## Roadmap & Extras (valued)
 - Panel UI/UX: detailed tooltips, light/dark themes, accessibility (keyboard/contrast).  
-- Extra visualizations: *IAS vs Time*, *VS vs Time*, *Altitude vs Distance* with configurable smoothing.  
+- Extra visualizations: *IAS vs Time*, *Altitude vs Time* with configurable smoothing.  
 - SimObject animations: smooth *banking* in turns, slight *idle* oscillations.  
 - Audio optimization: *ducking* when ATC speaks; physical *distance attenuation*.  
 - Persistence: remember last loaded JSON; export charts to PNG/CSV.
