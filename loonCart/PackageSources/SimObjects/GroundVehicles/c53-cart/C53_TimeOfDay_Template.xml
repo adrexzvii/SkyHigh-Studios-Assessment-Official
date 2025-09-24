@@ -1,0 +1,17 @@
+
+<ModelBehaviors>
+	<Include ModelBehaviorFile="Asobo\Common.xml"/>	
+	<Template Name="C53_TimeOfDay_Template">
+		<Component ID="ENV_DAY_VARS">
+			<Parameters Type="Default" Lifetime="Iteration">
+				<TIME_FOR_SOUND>1</TIME_FOR_SOUND>
+			</Parameters>			
+			<UseTemplate Name="Asobo_GT_Update" >
+				<FREQUENCY>1</FREQUENCY>
+				<UPDATE_CODE>
+					(E:TIME OF DAY, enum) #TIME_FOR_SOUND# == if{ 1 (&gt;A:GENERAL ENG COMBUSTION:1, bool) } els{ 0 (&gt;A:GENERAL ENG COMBUSTION:1, bool) }
+				</UPDATE_CODE>
+			</UseTemplate>
+		</Component>
+	</Template>	
+</ModelBehaviors>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ModelInfo version="1.1" guid="{4dbee7e8-ed6b-4af9-a232-e79dc01701ed}">
+	<LODS>
+		<LOD minSize="16" ModelFile="ASO_Boarding_Stairs_LOD00.gltf">
+			<AnimationFileList>
+				<AnimationFile>Boarding_Stairs.gltf</AnimationFile>
+			</AnimationFileList>
+		</LOD>
+		<LOD minSize="12" ModelFile="ASO_Boarding_Stairs_LOD01.gltf">
+			<AnimationFileList>
+				<AnimationFile>Boarding_Stairs.gltf</AnimationFile>
+			</AnimationFileList>
+		</LOD>
+		<LOD minSize="8" ModelFile="ASO_Boarding_Stairs_LOD02.gltf">
+			<AnimationFileList>
+				<AnimationFile>Boarding_Stairs.gltf</AnimationFile>
+			</AnimationFileList>
+		</LOD>
+		<LOD minSize="1" ModelFile="ASO_Boarding_Stairs_LOD03.gltf">
+			<AnimationFileList>
+				<AnimationFile>Boarding_Stairs.gltf</AnimationFile>
+			</AnimationFileList>
+		</LOD>
+		<LOD minSize="0.2" ModelFile="ASO_Boarding_Stairs_LOD04.gltf">
+			<AnimationFileList>
+				<AnimationFile>Boarding_Stairs.gltf</AnimationFile>
+			</AnimationFileList>
+		</LOD>
+	</LODS>
+	<Animation name="Elevation" guid="e2373626-e60f-4837-bcbd-1e8d1e25662f" type="Standard"/>	
+	<Animation name="Deployment" guid="1d4a99e8-2442-4b69-b93d-d15483b4df1c" type="Standard"/>
+	<Animation name="Wheel_Rotation" guid="aa3c89e3-e943-4911-a9be-1456a651d89a" type="Standard"/>
+	<Animation name="Wheel_Orientation" guid="2e1e1058-a5ac-4f2f-926a-a205b5a7542e" type="Standard"/>
+	<Animation name="Gyrolight" guid="703d57f3-4aea-4424-9533-6e261a498e5a" type="Standard"/>
+
+	<Behaviors>
+		<Include ModelBehaviorFile="Asobo\Misc\GroundVehicles.xml"/>
+		 <Include RelativeFile="..\C53_TimeOfDay_Template.xml"/> 
+
+		<Component ID="BoardingRamp">
+			<UseTemplate Name="ASOBO_BoardingRamp_Elevation_Template">
+				<ANIM_NAME>Deployment</ANIM_NAME>
+				<BASE_HEIGHT>3.329</BASE_HEIGHT> <!-- Height of bottom of moving part relative to CG, at 1st animation frame -->
+				<MAX_HEIGHT>5.952</MAX_HEIGHT> <!-- Height of bottom of moving part relative to CG, at last animation frame -->
+				<METERS_PER_SECOND>0.2</METERS_PER_SECOND> <!-- Speed of the animation -->
+			</UseTemplate>
+			
+			<UseTemplate Name="ASOBO_BoardingRamp_Orientation_Template">
+				<ANIM_NAME>Elevation</ANIM_NAME>
+				<PERCENT_PER_SECOND>20</PERCENT_PER_SECOND>
+			</UseTemplate>
+			
+		</Component>
+		
+		<Component ID="Wheels">
+			<UseTemplate Name="ASOBO_Wheel_Roll">
+				<ANIM_NAME>Wheel_Rotation</ANIM_NAME>
+				<WHEEL_RADIUS>0.395</WHEEL_RADIUS> <!-- in meters -->
+			</UseTemplate>
+			
+			<UseTemplate Name="ASOBO_Wheel_Turn">
+				<ANIM_NAME>Wheel_Orientation</ANIM_NAME>
+				<ORDER_MULTIPLIER>1</ORDER_MULTIPLIER> <!-- 1 if first frame of animation is turning left, -1 if turning right -->
+				<PERCENT_PER_SECOND>50</PERCENT_PER_SECOND> <!-- speed of the anim in percent per second. 100 means from max left to max right in 1 second -->
+			</UseTemplate>
+			
+		</Component>
+			
+		<Component ID="Lights">
+			
+			<UseTemplate Name="ASOBO_GroundVehicle_HeadLights"/>
+			<UseTemplate Name="ASOBO_GroundVehicle_BackLights"/>
+			
+			<UseTemplate Name="ASOBO_GroundVehicle_Gyrolights_Animated">
+				<ANIM_NAME>Gyrolight</ANIM_NAME> <!-- Anim for rotating the light -->
+				<PERCENT_PER_SECOND>100</PERCENT_PER_SECOND> <!-- which percentage of the anim is played in 1 second. 200 means anim is played twice per second -->
+			</UseTemplate>
+		</Component>
+		<!--Nuevo componente de visibilidad -->
+	<Component ID="DayOnlyVisibility" Node="SOL">
+  <Visibility>
+    <Parameter>
+      <Code>(E:TIME OF DAY, enum) 1 ==</Code>
+    </Parameter>
+  </Visibility>
+</Component>
+ <Component ID="EngineSound_TimeDay">
+			<UseTemplate Name="C53_TimeOfDay_Template" />
+		</Component> 
+	</Behaviors>
+</ModelInfo>
