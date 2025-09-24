@@ -45,10 +45,9 @@ This prototype demonstrates technical skills, design criteria, and problem-solvi
 ```
 / (root)
 ├─ WASM_Module1/                     # Native code (SimConnect/WASM) – movement/event logic
-├─ adriantest-lowerloon/             # MSFS Project (Project/Package) – package definitions
-├─ loonCart/                         # Assets/models/config (depending on content)
-├─ skyhigh_studios_assessment_toolbar_source_code_official/   # Panel (HTML/JS/TS/React)
-├─ data/                             # Real flight data (.json) for visualization
+├─ adriantest-lowerloon/             # MSFS Project communry foldee
+├─ loonCart/                         # MSFS PACKAGE FOLDER Assets/models/config (depending on content)
+├─ skyhigh_studios_assessment_toolbar_source_code_official/   # Panel (HTML/JS/CSS)
 └─ README.md                         # This document
 ```
 
