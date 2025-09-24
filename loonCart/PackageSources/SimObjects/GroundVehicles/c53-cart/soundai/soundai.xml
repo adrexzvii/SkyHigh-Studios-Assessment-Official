@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright (c) Asobo Studio, All rights reserved. www.asobostudio.com -->
+
+<SoundInfo Version="0.1">
+
+  <WwisePackages>
+    <MainPackage Name="Adrian_c53"/>
+  </WwisePackages>
+
+   <!--<AlwaysPlaySounds><Sound WwiseData="true" WwiseEvent="Car">
+    </Sound></AlwaysPlaySounds>-->
+
+    
+    <SimVarSounds>
+  <!--<Sound WwiseData="true" WwiseEvent="Car"
+         LocalVar="c53_is_day" Continuous="true">-->
+          <Sound WwiseEvent="Car" WwiseData="true" SimVar="GENERAL ENG COMBUSTION" Units="Bool" index="1" Continuous="true"> 
+    <Range LowerBound="0.1"/>
+    <WwiseRTPC LocalVar="C53_SOUND_VOLUME" Units="number" Index="0" RTPCName="LOCALVAR_C53_MASTER_VOLUME" />
+    <ContinuousStopDelay>0.25</ContinuousStopDelay>
+  </Sound>
+
+  <Sound  WwiseEvent="Landing" WwiseData="true" LocalVar="c53_landing" >
+    <Range LowerBound="0.1"/>
+     <WwiseRTPC LocalVar="C53_SOUND_VOLUME" Units="number" Index="0" RTPCName="LOCALVAR_C53_MASTER_VOLUME" />
+    <ContinuousStopDelay>0.25</ContinuousStopDelay>
+  </Sound>
+
+  <Sound  WwiseEvent="Animals" WwiseData="true" LocalVar="c53_animals" >
+    <Range LowerBound="0.1"/>
+     <WwiseRTPC LocalVar="C53_ANIMALS_VOLUME" Units="number" Index="0" RTPCName="LOCALVAR_C53_ANIMALS_VOLUME" />
+    <ContinuousStopDelay>0.25</ContinuousStopDelay>
+  </Sound>
+
+  <Sound  WwiseEvent="Landingg" WwiseData="true" LocalVar="c53_landingg" >
+    <Range LowerBound="0.1"/>
+     <WwiseRTPC LocalVar="C53_LANDING_VOLUME" Units="number" Index="0" RTPCName="LOCALVAR_C53_LANDING_VOLUME" />
+    <ContinuousStopDelay>0.25</ContinuousStopDelay>
+  </Sound>
+
+  <Sound  WwiseEvent="Oldcar" WwiseData="true" LocalVar="c53_oldcar" >
+    <Range LowerBound="0.1"/>
+     <WwiseRTPC LocalVar="C53_CAR_VOLUME" Units="number" Index="0" RTPCName="LOCALVAR_C53_CAR_VOLUME" />
+    <ContinuousStopDelay>0.25</ContinuousStopDelay>
+  </Sound>
+
+</SimVarSounds>
+
+</SoundInfo>

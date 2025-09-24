@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<FSData version="9.0">
+	<SceneryObject lat="-17.41517117121131" lon="-66.18072869247622" alt="0.00000000000000" pitch="0.000000" bank="0.000000" heading="0.000000" imageComplexity="VERY_SPARSE" altitudeIsAgl="TRUE" snapToGround="TRUE" snapToNormal="FALSE">
+		<WorldScript objectFile="scenarii\lowerloon\c53-scripts\c53-cart-script.spb"/>
+	</SceneryObject>
+</FSData>
+

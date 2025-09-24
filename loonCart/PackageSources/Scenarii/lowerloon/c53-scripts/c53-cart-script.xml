@@ -1,0 +1,61 @@
+<SimBase.Document Type = "MissionFile" version="1,0">
+<Filename>c53-cart-script.spb</Filename>
+<WorldBase.Flight>
+<SimContain.Container InstanceId = "{0db5a16a-4340-43b8-8605-69a05028a5c8}">
+<Descr>c53-cart</Descr>
+<ContainerTitle>c53-cart</ContainerTitle> 
+<AddPilot>
+<UseRegionContainerType>true</UseRegionContainerType>
+<AIType>GroundVehicle_Pilot</AIType>
+</AddPilot>
+<IsOnGround>True</IsOnGround>
+<LocalOffsetXYZ>0.000,0.000,0.000,0.000</LocalOffsetXYZ>
+<LocalOrientation>0.000,0.000,0.000</LocalOrientation>
+<AIType>GroundVehicle</AIType>
+<ContainerID>-1</ContainerID>
+<SimplifiedSimMode>AI</SimplifiedSimMode>
+<ParameterAI>
+<GroundCruiseSpeed>25</GroundCruiseSpeed>
+<GroundTurnSpeed>15</GroundTurnSpeed>
+<GroundTurnTime>2</GroundTurnTime>
+<YieldToUser>False</YieldToUser> 
+<CanReverse>False</CanReverse>
+<KeepLastHeading>False</KeepLastHeading>
+<WaypointList>
+<WrapWaypoints>True</WrapWaypoints>
+<CurrentWaypoint>0</CurrentWaypoint>
+<BackupToFirst>False</BackupToFirst>
+<AlwaysBackUp>False</AlwaysBackUp>
+<Waypoint InstanceId ="{0ad192e7-7fe3-429c-b929-8c8d3b776474}">
+<Descr>Waypoint1</Descr> 
+ <WaypointID>0</WaypointID>
+<WorldPosition> -17.41647307519493,-66.18168749782573,0</WorldPosition>
+<AltitudeIsAGL>True</AltitudeIsAGL> 
+<IsTeleportEnable>False</IsTeleportEnable> 
+</Waypoint> 
+<Waypoint InstanceId ="{927dd460-f6a0-4507-b20b-3805457a243e}">
+<Descr>Waypoint2</Descr> 
+ <WaypointID>1</WaypointID>
+<WorldPosition> -17.41538487259998,-66.18068729405257,0</WorldPosition>
+<AltitudeIsAGL>True</AltitudeIsAGL> 
+<IsTeleportEnable>False</IsTeleportEnable> 
+</Waypoint> 
+<Waypoint InstanceId ="{586edf14-9e63-4687-9ecb-0644e720dcd3}">
+<Descr>Waypoint3</Descr> 
+ <WaypointID>2</WaypointID>
+<WorldPosition> -17.41619551320239,-66.17962604173459,0</WorldPosition>
+<AltitudeIsAGL>True</AltitudeIsAGL> 
+<IsTeleportEnable>False</IsTeleportEnable> 
+</Waypoint> 
+<Waypoint InstanceId ="{5cd7807f-a91f-4f25-bfa7-12739fb4865f}">
+<Descr>Waypoint4</Descr> 
+ <WaypointID>3</WaypointID>
+<WorldPosition> -17.4164985407956,-66.18158765475727,0</WorldPosition>
+<AltitudeIsAGL>True</AltitudeIsAGL> 
+<IsTeleportEnable>False</IsTeleportEnable> 
+</Waypoint> 
+</WaypointList> 
+</ParameterAI> 
+</SimContain.Container> 
+</WorldBase.Flight>
+</SimBase.Document> 
